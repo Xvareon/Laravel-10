@@ -9,7 +9,11 @@
 </head>
 
 <body>
-    <h1>Product</h1>
+    <a href="{{route('product.index')}}">
+        <h1>Product</h1>
+    </a>
+
+    <!-- Display message for success sessions -->
     <div>
         @if(session()->has('success'))
         <div>
@@ -17,12 +21,25 @@
         </div>
         @endif
     </div>
+
     <div>
+
+        <!-- For going to the create product page -->
         <div>
             <a href="{{route('product.create')}}">
                 Create a product
             </a>
         </div>
+
+        <!-- For searching a product using name -->
+        <div>
+            <form method="GET" action="{{route('product.search')}}">
+                <label for="search">Search by Product Name:</label>
+                <input type="text" id="search" name="search" placeholder="Enter product name">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
         <table border="1">
             <tr>
                 <th>ID</th>

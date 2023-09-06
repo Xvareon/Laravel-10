@@ -58,4 +58,14 @@ class ProductController extends Controller
 
         return redirect(route('product.index'))->with('success', 'Product Deleted Successfully!');
     }
+    
+    public function search(Request $request){
+        $searchTerm = $request->input('search');
+        
+        // Perform a database query to search for products with the given name
+        $products = Product::where('name', 'like', '%' . $searchTerm . '%')->get();
+
+        // return view('products.index', compact('products'));
+        return redirect(route('product.index'))->with('success', 'Search was successful!');
+    }
 }

@@ -9,14 +9,16 @@
 </head>
 
 <body>
-    <h1>Create a Product</h1>
+    <a href="{{route('product.create')}}"><h1>Create a Product</h1><a/>
 
+    <!-- For going back to the index page -->
     <div>
         <a href="{{route('product.index')}}">
             Go back to index page
         </a>
     </div>
 
+    <!-- For errors in user input -->
     <div>
         @if($errors->any())
             <ul>
