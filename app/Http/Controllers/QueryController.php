@@ -24,13 +24,12 @@ class QueryController extends Controller{
 
         return $processedResponse;
     }
-
-    private function processObject($object){
+    
+    private function processObject($object, $level = 0){
         if (is_array($object)) {
-            // $processed = [];
-            $objectCount = count($object); // Count the quantity of items at this nesting layer
             $processed = [
-                'objectCount' => $objectCount
+                'objectCount' => count($object),
+                'items' => []
             ];
     
             foreach ($object as $key => $value) {
@@ -38,17 +37,15 @@ class QueryController extends Controller{
                 $sortedKey = $this->sortStringDescending($key);
     
                 if (is_array($value)) {
-                    $processed[$sortedKey] = [
-                        'objectCount' => count($value)
-                    ];
-                    $processed[$sortedKey] += $this->processObject($value);
+                    // Recursively process nested arrays
+                    $processed['items'][$sortedKey] = $this->processObject($value, $level + 1);
                 } else {
                     // Sort characters of the value in descending order
                     $sortedValue = $this->sortStringDescending($value);
-                    $processed[$sortedKey] = $sortedValue;
+                    $processed['items'][$sortedKey] = $sortedValue;
                 }
             }
-            // $processed['objectCount'] = $objectCount; // Add object count to the result
+    
             return $processed;
         } else {
             return $object;

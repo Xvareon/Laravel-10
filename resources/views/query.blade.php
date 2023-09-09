@@ -45,7 +45,8 @@
             })
             .then(response => response.json())
             .then(data => {
-                document.getElementById("response").textContent = JSON.stringify(data.processedResponse, null, 2);
+                var responseText = "Original Response:\n" + JSON.stringify(data.originalResponse, null, 2) + "\n\nProcessed Response:\n" + JSON.stringify(data.processedResponse, null, 2);
+                document.getElementById("response").textContent = responseText;
             });
         }
     </script>
