@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Str;
 
 class QueryController extends Controller{
     public function handleRequest(Request $request){
@@ -12,6 +13,7 @@ class QueryController extends Controller{
 
         $originalResponse = Http::get($url)->json();
         $processedResponse = $this->processResponse($originalResponse);
+
 
         return response()->json([
             'originalResponse' => $originalResponse,
@@ -26,16 +28,20 @@ class QueryController extends Controller{
     }
     
     private function processObject($object, $level = 0){
-        if (is_array($object)) {
+        $processed =[];
+        $keys = array_keys($object);
+        if ($keys !== range(0, count($object) - 1)) {
             $processed = [
                 'objectCount' => count($object),
             ];
+        }
     
             foreach ($object as $key => $value) {
                 // Sort characters of the key in descending order
                 $sortedKey = $this->sortStringDescending($key);
-    
+                
                 if (is_array($value)) {
+                    
                     // Recursively process nested arrays
                     $processed[$sortedKey] = $this->processObject($value, $level + 1);
                 } else {
@@ -46,9 +52,6 @@ class QueryController extends Controller{
             }
     
             return $processed;
-        } else {
-            return $object;
-        }
     }
 
     // function to sort the strings
