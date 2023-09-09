@@ -29,7 +29,6 @@ class QueryController extends Controller{
         if (is_array($object)) {
             $processed = [
                 'objectCount' => count($object),
-                'items' => []
             ];
     
             foreach ($object as $key => $value) {
@@ -38,11 +37,11 @@ class QueryController extends Controller{
     
                 if (is_array($value)) {
                     // Recursively process nested arrays
-                    $processed['items'][$sortedKey] = $this->processObject($value, $level + 1);
+                    $processed[$sortedKey] = $this->processObject($value, $level + 1);
                 } else {
                     // Sort characters of the value in descending order
                     $sortedValue = $this->sortStringDescending($value);
-                    $processed['items'][$sortedKey] = $sortedValue;
+                    $processed[$sortedKey] = $sortedValue;
                 }
             }
     
