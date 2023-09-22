@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\QueryController;
+use App\Http\Controllers\QueryViewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +33,9 @@ Route::put('/product{product}/update', [ProductController::class, 'update'])->na
 Route::delete('/product{product}/remove', [ProductController::class, 'remove'])->name('product.remove');
 
 Route::get('/product/search', [ProductController::class, 'search'])->name('product.search');
+
+Route::post('/query', [QueryController::class, 'handleRequest']);
+
+Route::get('/queryview', [QueryViewController::class, 'showView']);
+
+Route::get('/product{product}/detail', [ProductController::class, 'detail'])->name('product.detail');

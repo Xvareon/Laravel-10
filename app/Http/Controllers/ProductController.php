@@ -39,6 +39,10 @@ class ProductController extends Controller
         return view('products.edit', ['product' => $product]);
     }
 
+    public function detail(Product $product){
+        return view('products.detail', ['product' => $product]);
+    }
+
     public function update(Product $product, Request $request){
         $data = $request->validate([
             'name' => 'required',
@@ -65,7 +69,6 @@ class ProductController extends Controller
         // Perform a database query to search for products with the given name
         $products = Product::where('name', 'like', '%' . $searchTerm . '%')->get();
 
-        // return view('products.index', compact('products'));
         return redirect(route('product.index'))->with('success', 'Search was successful!');
     }
 }
