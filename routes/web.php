@@ -35,6 +35,7 @@ Route::delete('/product{product}/remove', [ProductController::class, 'remove'])-
 Route::get('/product/search', [ProductController::class, 'search'])->name('product.search');
 
 Route::post('/query', [QueryController::class, 'handleRequest']);
-// Route::post('/query', 'QueryController@handleRequest');
 
 Route::get('/queryview', [QueryViewController::class, 'showView']);
+
+Route::get('/product{product}/detail', [ProductController::class, 'detail'])->name('product.detail');
