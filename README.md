@@ -6,7 +6,7 @@
 - [Git and Git Bash (Version Control)](https://git-scm.com/).
 
 ## PROJECT SETUP
-- Go to xampp -> htdocs -> git bash here
+- Go to the following directory: xampp -> htdocs -> git bash here using right click
 - In the git bash GUI, enter:" composer create-project laravel/laravel your-project-name "
 - Open Xampp application and start the Apache and MySQL actions
 - Open VS Code and its terminal then enter:" php artisan serve " to start
@@ -28,7 +28,7 @@
 ## AND YOU ARE SET!
 - Now just create your routes and views as you would normally.
 
-## ==============================================================
+## =================================================
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
