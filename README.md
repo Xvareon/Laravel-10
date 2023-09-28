@@ -1,3 +1,5 @@
+## Laravel 10 application made with PHP, Html, MySQL, and XAMPP
+
 ## PROJECT DEPENDENCIES
 - [Composer](https://getcomposer.org/download/).
 - [Xampp (v7.4.8)](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/).
