@@ -1,4 +1,4 @@
-## Laravel 10 application made with PHP, Html, MySQL, and XAMPP
+## Laravel 10 application made with PHP, Html, MySQL, and XAMPP.
 
 ## PROJECT DEPENDENCIES
 - [Composer](https://getcomposer.org/download/).
@@ -8,7 +8,7 @@
 - [Git and Git Bash (Version Control)](https://git-scm.com/).
 
 ## PROJECT SETUP
-- Go to the following directory: xampp -> htdocs -> git bash here using right click
+- Go to the following folder directory: xampp -> htdocs -> git bash here using right click
 - In the git bash GUI, enter:" composer create-project laravel/laravel your-project-name "
 - Open Xampp application and start the Apache and MySQL actions
 - Open VS Code and its terminal then enter:" php artisan serve " to start
@@ -21,7 +21,7 @@
 - Run the VS Code terminal and enter:" php artisan migrate " to check db connection
 - To create a table, use the migration files of laravel.
 - To do this, enter in the terminal:" php artisan make:migration create_yourtablename_table "
-- To populate the columns, go your project directory -> migrations -> your table name
+- To populate the columns, go to your project directory -> migrations -> yourtablename
 - Modify the schema to your needs and run the terminal command:" php artisan migrate "
 - To create a model, enter in the terminal:" php artisan make:model Yourmodelname " (the model name should start with uppercase)
 - Create a protected fillable inside Yourmodelname containing the corresponding columns in your table
