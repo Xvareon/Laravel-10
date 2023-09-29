@@ -56,6 +56,10 @@
     </div>
 
     <div>
+        <a href="{{route('product.edit', ['product' => $product])}}">Edit</a>
+    </div>
+    
+    <div>
     <form method="post" action="{{route('product.remove', ['product' => $product])}}">
         @csrf
         @method('delete')

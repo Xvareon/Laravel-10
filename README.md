@@ -5,7 +5,6 @@
 - [Xampp (v7.4.8)](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/).
 - [Visual Studio Code (IDE)](https://visualstudio.microsoft.com/).
 - [Laravel 10 (Framework)](https://laravel.com/docs/10.x).
-- [Git and Git Bash (Version Control)](https://git-scm.com/).
 
 ## PROJECT SETUP
 - Go to the following folder directory: xampp -> htdocs -> git bash here using right click
