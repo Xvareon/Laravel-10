@@ -34,24 +34,28 @@
         @csrf
         @method('put')
         <div>
+            <label>ID</label>
+            <input type="text" name="id" placeholder="Id" value="{{$product->id}}" readonly/>
+        </div>
+        <div>
             <label>Name</label>
-            <input type="text" name="name" placeholder="Name" value="{{$product->name}}"/>
+            <input type="text" name="name" placeholder="Name" value="{{$product->name}}" required/>
         </div>
         <div>
             <label>Variant</label>
-            <input type="text" name="variant" placeholder="Variant" value="{{$product->variant}}"/>
+            <input type="number" name="variant" placeholder="Variant" value="{{$product->variant}}" required/>
         </div>
         <div>
             <label>Qty</label>
-            <input type="text" name="qty" placeholder="Qty" value="{{$product->qty}}"/>
+            <input type="number" name="qty" placeholder="Qty" value="{{$product->qty}}" required/>
         </div>
         <div>
             <label>Price</label>
-            <input type="text" name="price" placeholder="Price" value="{{$product->price}}"/>
+            <input type="number" name="price" step="0.01" placeholder="Price" value="{{$product->price}}" required/>
         </div>
         <div>
             <label>Description</label>
-            <input type="text" name="description" placeholder="Description" value="{{$product->description}}"/>
+            <input type="text" name="description" placeholder="Description" value="{{$product->description}}" required/>
         </div>
         <div>
             <input type="submit" value="Update the product">
