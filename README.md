@@ -1,4 +1,4 @@
-## Laravel 10 application made with PHP, Html, MySQL, and XAMPP.
+## Laravel 10 application made with PHP, Blade, MySQL, and XAMPP.
 
 ## PROJECT DEPENDENCIES
 - [Composer](https://getcomposer.org/download/).
