@@ -22,9 +22,11 @@
 - To do this, enter in the terminal:" php artisan make:migration create_yourtablename_table "
 - To populate the columns, go to your project directory -> database -> migrations -> yourtablename
 - Modify the schema to your needs and run the terminal command:" php artisan migrate "
-- To create a model, enter in the terminal:" php artisan make:model Yourmodelname " (the model name should start with uppercase)
+- To create a model, enter in the terminal:" php artisan make:model Yourmodelname " (the model name should start with uppercase and is singular)
 - Create a protected fillable inside Yourmodelname containing the corresponding columns in your table
 - To create the controller, enter in the terminal:" php artisan make:controller YourmodelnameController "
+- import your model in your controller if it is not already imported like this:" use App\Models\Yourmodelname; "
+- Import the respective controller to the web.php file in the routes directory like this:" use App\Http\Controllers\YourmodelnameController; "
 
 ## AND YOU ARE SET!
 - Now just create your routes and views as you would normally.
