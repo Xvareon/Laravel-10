@@ -20,7 +20,7 @@
 - Run the VS Code terminal and enter:" php artisan migrate " to check db connection
 - To create a table, use the migration files of laravel.
 - To do this, enter in the terminal:" php artisan make:migration create_yourtablename_table "
-- To populate the columns, go to your project directory -> migrations -> yourtablename
+- To populate the columns, go to your project directory -> database -> migrations -> yourtablename
 - Modify the schema to your needs and run the terminal command:" php artisan migrate "
 - To create a model, enter in the terminal:" php artisan make:model Yourmodelname " (the model name should start with uppercase)
 - Create a protected fillable inside Yourmodelname containing the corresponding columns in your table
